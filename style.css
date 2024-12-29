@@ -11,6 +11,26 @@ h1, h2 {
     text-align: center;
 }
 
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav li {
+    cursor: pointer;
+    font-weight: bold;
+}
+
 /* Authentication Page */
 #authPage {
     display: flex;
@@ -64,6 +84,8 @@ main {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    padding: 10px;
+    overflow-x: auto;
 }
 
 #videoList div {
@@ -79,4 +101,55 @@ main {
     width: 100%;
     border-radius: 8px;
 }
-AIzaSyAHmyhuoJ0b3rs5ylPzDPKBqRndLG_o6fc
+
+/* Loading Page */
+#loadingPage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #141414;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 9999;
+}
+
+#loadingPage h1 {
+    animation: fade 1.5s infinite;
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    #videoList div {
+        width: 100%; /* Full width on small devices */
+    }
+}
+
+@media (max-width: 1024px) {
+    #videoList div {
+        width: 48%; /* Two videos per row */
+    }
+}
+
+@media (min-width: 1025px) {
+    #videoList div {
+        width: 200px; /* Original size for larger screens */
+    }
+}
